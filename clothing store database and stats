@@ -1,0 +1,25 @@
+-- Created a clothing store database
+
+CREATE TABLE clothing_store (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, cost INTEGER, aisle INTEGER);
+
+INSERT INTO clothing_store VALUES(1, "Pink shirt", 2,7,10);
+INSERT INTO clothing_store VALUES(2, "Purple shirt", 2, 9, 10);
+INSERT INTO clothing_store VALUES(3, "Yellow shirt", 2, 5, 10);
+INSERT INTO clothing_store VALUES(4, "Black shirt", 2, 3, 10);
+INSERT INTO clothing_store VALUES(5, "Pink shirt", 2, 7, 10);
+INSERT INTO clothing_store VALUES(6, "Blue Pants", 6, 8, 7);
+INSERT INTO clothing_store VALUES( 7, "Black skirt", 9, 5,4);
+INSERT INTO clothing_store VALUES(8, "Yellow pants", 2, 7, 7);
+INSERT INTO clothing_store VALUES(9, "Pink pants", 5, 9, 7);
+INSERT INTO clothing_store VALUES(10, "Purple pants", 4, 9, 7);
+INSERT INTO clothing_store VALUES(11, "Black pants", 1, 9, 7);
+INSERT INTO clothing_store VALUES(12, "Green shirt", 5, 6, 10);
+INSERT INTO clothing_store VALUES(13, "Green skirt", 3, 5, 4);
+INSERT INTO clothing_store VALUES(14, "Green pants", 2,9, 7);
+INSERT INTO clothing_store VALUES(15,"Yellow skirt", 5,7, 4);
+
+-- Displayed database grouped by cost
+SELECT *, SUM(quantity) FROM clothing_store GROUP BY cost;
+
+-- What is the sum of items?
+SELECT aisle, SUM(quantity) FROM clothing_store 
