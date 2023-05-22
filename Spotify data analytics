@@ -1,3 +1,4 @@
+#In this SQL, I'm querying a database with multiple tables in it to quantify statistics about Spotifys' artists and songs. 
 
 
 #1 What is the average danceability by artist and track?
