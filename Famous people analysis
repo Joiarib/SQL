@@ -1,0 +1,108 @@
+/* Create table about the people and what they do here */
+CREATE TABLE famous_people(id INTEGER PRIMARY KEY ,
+first_name TEXT,
+last_name TEXT,
+age INTEGER);
+INSERT INTO famous_people (first_name, last_name, age)
+VALUES ("Karol", "G",  31);
+INSERT INTO famous_people (first_name, last_name, age)
+VALUES("Benito", "Martinez", 29);
+INSERT INTO famous_people (first_name, last_name, age)
+VALUES("Anne", "Hathaway", 40);
+INSERT INTO famous_people (first_name, last_name, age)
+VALUES ("Snoh", "Aalegra", 30);
+INSERT INTO famous_people (first_name, last_name, age)
+VALUES ("Jennifer", "Lopez", 52);
+
+CREATE TABLE occupation(id INTEGER PRIMARY KEY,
+artist_id INTEGER,
+career TEXT);
+INSERT INTO occupation (artist_id,career)
+VALUES (1,"singer");
+INSERT INTO occupation (artist_id,career)
+VALUES (2,"singer");
+INSERT INTO occupation (artist_id, career)
+VALUES (3,"actor");
+INSERT INTO occupation (artist_id,career)
+VALUES (4,"singer");
+INSERT INTO occupation (artist_id, career)
+VALUES (5,"actor");
+INSERT INTO occupation (artist_id, career)
+VALUES (5,"singer");
+
+
+CREATE TABLE movies (id INTEGER PRIMARY KEY, movie_id INTEGER,
+film TEXT);
+INSERT INTO movies (movie_id,film)
+VALUES (3,"Princess Diaries");
+INSERT INTO movies (movie_id,film)
+VALUES (3,"The Devil wears prada");
+INSERT INTO movies (movie_id,film)
+VALUES (5,"The wedding planner");
+INSERT INTO movies (movie_id,film)
+VALUES (5,"Maid in Manhattan");
+
+CREATE TABLE music (id INTEGER PRIMARY KEY,song_id INTEGER,
+songs TEXT);
+INSERT INTO music (song_id,songs)
+VALUES (1,"Manana sera bonito");
+INSERT INTO music (song_id,songs)
+VALUES (1,"TQG");
+INSERT INTO music (song_id,songs)
+VALUES (1,"Copas");
+INSERT INTO music (song_id,songs)
+VALUES (1,"X si volvemos");
+INSERT INTO music (song_id,songs)
+VALUES (2,"Un verano sin ti");
+INSERT INTO music (song_id,songs)
+VALUES (2,"Safaera");
+INSERT INTO music (song_id,songs)
+VALUES (2,"Ojitos lindos");
+INSERT INTO music (song_id,songs)
+VALUES (2," Esta cabron ser yo");
+INSERT INTO music (song_id)
+VALUES (3 );
+INSERT INTO music (song_id,songs)
+VALUES (4,"I want you around");
+INSERT INTO music (song_id,songs)
+VALUES (4,"Do for Love");
+INSERT INTO music (song_id,songs)
+VALUES (4,"YOU");
+INSERT INTO music (song_id,songs)
+VALUES (5,"Love dont cost a thing");
+INSERT INTO music (song_id, songs)
+VALUES (5, "On the floor");
+
+CREATE TABLE birth_place(id INTEGER PRIMARY KEY,birth_placeid INTEGER,
+location TEXT);
+INSERT INTO birth_place (birth_placeid,location)
+VALUES (1,"Colombia");
+INSERT INTO birth_place (birth_placeid,location)
+VALUES (2,"Puerto Rico");
+INSERT INTO birth_place (birth_placeid,location)
+VALUES (3,"Brooklyn");
+INSERT INTO birth_place (birth_placeid,location)
+VALUES (4,"Sweden");
+INSERT INTO birth_place (birth_placeid,location)
+VALUES (5,"Bronx");
+
+SELECT famous_people.first_name, famous_people.last_name, occupation.career
+FROM famous_people
+LEFT OUTER JOIN occupation
+ON famous_people.id=occupation.artist_id;
+
+SELECT famous_people.first_name,famous_people.age,birth_place.location
+FROM famous_people
+LEFT OUTER JOIN birth_place
+ON famous_people.id= birth_place.birth_placeid;
+
+ SELECT famous_people.first_name, music.songs, movies.film
+ FROM famous_people
+ LEFT JOIN music
+ ON famous_people.id=music.song_id
+LEFT JOIN movies
+ ON music.song_id=movies.movie_id;
+
+ 
+ 
+
