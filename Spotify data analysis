@@ -1,1 +1,13 @@
-# In this 
+# I'm querying a database with multiple tables in it to quantify statistics about the artist and their songs. 
+
+#Who are the top 10 artists based on popularity. 
+SELECT artist_name, popularity
+FROM BIT_DB.Spotifydata
+GROUP BY artist_name, popularity
+Order by popularity desc
+LIMIT 10;
+
+#Which artist released the longest song. 
+Select artist_name, max(duration_ms)
+FROM BIT_DB.Spotifydata;
+
